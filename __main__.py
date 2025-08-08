@@ -229,6 +229,18 @@ def stop_bot(ctx: Context) -> str:
     return str(response)
 
 @mcp.tool()
+def restart_bot(ctx: Context) -> str:
+    """
+    Stop and then start the Freqtrade bot (restart).
+    """
+    client: FtRestClient = ctx.request_context.lifespan_context["client"]
+    stop_resp = client.stop_bot()
+    ctx.info("Freqtrade bot stopped for restart")
+    start_resp = client.start_bot()
+    ctx.info("Freqtrade bot started after restart")
+    return str({"stop": stop_resp, "start": start_resp})
+
+@mcp.tool()
 def reload_config(ctx: Context) -> str:
     """
     Reload the bot configuration.

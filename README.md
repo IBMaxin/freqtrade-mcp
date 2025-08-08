@@ -93,6 +93,7 @@ The server exposes the following Freqtrade API endpoints as MCP tools:
 | `place_trade`         | Place a buy/sell trade               | `pair: str`, `side: str`, `stake_amount: float` |
 | `start_bot`           | Start the bot                        | None                                |
 | `stop_bot`            | Stop the bot                         | None                                |
+| `restart_bot`         | Restart the bot                      | None                                |
 | `reload_config`       | Reload bot configuration             | None                                |
 | `add_blacklist`       | Add pair to blacklist                | `pair: str`                         |
 | `delete_blacklist`    | Remove pair from blacklist           | `pair: str`                         |
@@ -183,6 +184,11 @@ The server exposes the following Freqtrade API endpoints as MCP tools:
     - "Delete the trade lock with ID 123."
     - "Remove lock number 45."
     - "Unlock the trade with ID 7."
+
+18. **Restart Bot**:
+    - "Restart the trading bot."
+    - "Kill and restart the Freqtrade API."
+    - "Stop and start the bot again."
 
 ## License
 
